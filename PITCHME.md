@@ -17,7 +17,10 @@ Alati koji nam omogucavaju vodnjenje evidnecije izmenama nad projektom bilo da r
 Jer se u odnosu na druge istakao svojom brzinom, integritetom nad podatcima, distribuiranoscu i mogucnoscu za ne linearnim tokom rada.
 
 #HSLIDE
-###Kako je organizovan?
-Zamisljen je kao mreza zasebnih repozitorijuma koji se mogu medjusobno sinhronizovati (distribuiranost), iz toga proistice da svaka izmena koja je napravljena utice samo na lokalni repozitorijum sve dok se ne izvrsi sinhronizacija sa drugim repozitorijumom.
+###Kako je zamisljen?
+Kao mreza zasebnih repozitorijuma koji se mogu medjusobno sinhronizovati (distribuiranost), iz toga proistice da svaka izmena koja je napravljena utice samo na lokalni repozitorijum sve dok se ne izvrsi sinhronizacija sa drugim repozitorijumom.
 
 #HSLIDE
+###Kako se koristi?
+Kao kombinacija centralizovane i distribuirane mreze gde se svi sinhronizuju preko jednog repozitoriujma (Github, Bitbcuket, Gitlab...)
+
