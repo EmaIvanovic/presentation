@@ -32,6 +32,10 @@ Kao mreza zasebnih repozitorijuma koji se mogu medjusobno sinhronizovati (distri
 Kao kombinaciju centralizovane i distribuirane mreze gde se sve izmene sinhronizuju preko jednog udaljenog repozitoriujma (Github, Bitbcuket, Gitlab...)
 
 #HSLIDE
+### Repozitoriujum
+Mesto na kome se cuvaju svi commit-ovi sa promenama koje smo do napravil. Moze biti lokalni ili udaljeni. Nalazi se u nasem projektu u `.git` dorektorijumu.
+
+#HSLIDE
 ### Commit
 
 Commit predstavlja stanje projekta u odredjenom trenutku kada samo ga nacinilo. Vise povezanih commit-ova formira graf koji predstavlja istoriju naseg projekta.
@@ -56,6 +60,67 @@ TODO fix Nelinearno verzionisanje koda je zgodan pristup koji nam omogucava pode
 ![](images/grananje.png)
 
 #HSLIDE
-### Prakticni primeri
+### Prakticni rad
 ![](images/git.jpg)
 
+#HSLIDE
+
+###Rukovanje
+
+```
+# command
+git <command> <option 1> <option 2> …
+
+# help
+git help <command> …
+```
+
+#HSLIDE
+###Inicializacija repozitoriuma
+
+```
+# initialize new repo
+$ cd <repo name>
+$ git init
+
+# clone existing repo
+$ git clone <https link> or <ssh link>
+$ cd <repo name>
+```
+
+#HSLIDE
+###Konfiguracija
+
+globalna | lokalna | sistemska
+
+```
+git config --global
+git config config user.name
+git config user.email 
+...
+```
+
+#HSLIDE
+###.gitignore
+
+Datoteka u kojoj su navedeni svi direktorijumi i datotoeke koje zelimo da izuzmeo iz verzionisanja (.idea, /log, /*.yml...)
+
+#HSLIDE
+###Index
+Mesto gde se pripremaju izmene za commit
+![](images/index.png)
+
+#HSLIDE
+```
+# dodavanje datoteke za pracanje
+$ git add <name>
+# prikazivanje trenutnog statusa
+$ git status
+# prvi commit
+$ git commit -m 'Prva izmena'
+$ git status
+# prikazivanje istorije projekta
+$ git log
+```
+
+#HSLIDE
