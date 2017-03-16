@@ -79,11 +79,11 @@ git help <command> …
 ###Inicializacija repozitoriuma
 
 ```
-# initialize new repo
+# inicializacija novog repozitorijuma
 $ cd <repo name>
 $ git init
 
-# clone existing repo
+# kloniranje postojeceg repozitorijuma
 $ git clone <https link> or <ssh link>
 $ cd <repo name>
 ```
@@ -106,13 +106,13 @@ git config user.email
 Datoteka u kojoj su navedeni svi direktorijumi i datotoeke koje zelimo da izuzmeo iz verzionisanja (.idea, /log, /*.yml...)
 
 #HSLIDE
-###Index
+###Index i prvi commit
 Mesto gde se pripremaju izmene za commit
 ![](images/index.png)
 
 #HSLIDE
 ```
-# dodavanje datoteke za pracanje
+# dodavanje datoteke u pracanje
 $ git add <name>
 # prikazivanje trenutnog statusa
 $ git status
@@ -121,6 +121,75 @@ $ git commit -m 'Prva izmena'
 $ git status
 # prikazivanje istorije projekta
 $ git log
+# formatiran prikaz
+$ git log --graph --all --oneline --decorate
 ```
 
 #HSLIDE
+### HEAD
+Referenca na 'trenutni' SHA1 commit-a na kome se nalazimo
+
+#HSLIDE
+### Detached HEAD
+Bilo koji checkout na commit koji nije ime grane dovodi do ovog stanja, cak i na SHA1 koji je poslednji na grani (ovo se moze predstaviti kao anonimna grana). Samo checkout na ime lokalne grane izbegava ovaj slicaj.
+
+```
+# fix for deached HEAD
+git checkout develop
+```
+
+#HSLIDE
+### Kretanje kroz istoriju
+
+```
+git log
+git checkout <commit sha> or <tag>
+```
+
+#HSLIDE
+### Stash
+Mesto za privremeno cuvanje izmena
+
+```
+# stash sa dafault imenom
+$ git stash
+# stash sa specificiranim imenom
+$ git stash <-u> <save [name]>
+# izlistavanje svih stash-eva
+$ git stash list
+```
+
+#HSLIDE
+### Uklanjanje promena iz indexa
+
+```
+# obrisi datoteku
+$ git rm <name> 
+# Ukloni iz repozitorijuma ali ostavi fizicki
+$ git rm --cached <name> 
+# Ukloni sve izmene od poslednjeg commit-a
+$ git checkout . or <name>
+```
+
+#HSLIDE
+### Uklanjanje commit-ova iz lokalnog repozitorijuma
+
+```
+# obrisi sve commit-ove i njihove promene
+$ git reset --hard <commit sha> 
+# obrisi sve commit-ove ali ostavi njihove izmene u indexu
+$ git reset --soft <commit sha>
+```
+
+#HSLIDE
+### Uklanjanje commit-ova iz udaljenog repozitorijuma
+
+```
+# obrisi sve commit-ove i njihove promene
+$ git reset --hard <commit sha> 
+# obrisi sve commit-ove ali ostavi njihove izmene u indexu
+$ git reset --soft <commit sha>
+```
+
+
+
