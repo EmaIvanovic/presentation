@@ -53,9 +53,9 @@ Idealna situacija u kojoj su se izmene desavale sekvencialno jedna za drugom. Pr
 ![](images/linearno.png)
 
 #HSLIDE
-### Grafovi, grananje i spajanje grana
+### Grafovi i grananje
 
-TODO fix Nelinearno verzionisanje koda je zgodan pristup koji nam omogucava podelu tok razvoja na vise paralelnih grana gde bi se u svakoj razvijala tacno odredjena stvar bez remecenja 
+Grananje predstavlaj nelinearno verzionisanje i ono se moze predstaviti pitem grafova
 
 ![](images/grananje.png)
 
@@ -224,6 +224,16 @@ git commit
 ```
 
 #HSLIDE
-### Conflict
+### grananje
+
+```
+git branch
+git branch <name>
+git checkout -b <name>
+develop u sadasnju granu
+git merge develop (fast forvard)
+
+git rebase develop
+```
 
 
