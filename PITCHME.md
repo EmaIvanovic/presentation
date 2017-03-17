@@ -55,7 +55,7 @@ Idealna situacija u kojoj su se izmene desavale sekvencialno jedna za drugom. Pr
 #HSLIDE
 ### Grafovi i grananje
 
-Grananje predstavlaj nelinearno verzionisanje i ono se moze predstaviti pitem grafova
+Grananje predstavlja nelinearno verzionisanje i ono se moze predstaviti pitem grafova
 
 ![](images/grananje.png)
 
@@ -83,7 +83,7 @@ git help <command> …
 $ cd <repo name>
 $ git init
 
-# kloniranje postojeceg repozitorijuma
+# kloniranje postojeceg udaljenog repozitorijuma
 $ git clone <https link> or <ssh link>
 $ cd <repo name>
 ```
@@ -106,7 +106,7 @@ git config user.email
 Datoteka u kojoj su navedeni svi direktorijumi i datotoeke koje zelimo da izuzmeo iz verzionisanja (.idea, /log, /*.yml...)
 
 #HSLIDE
-###Index i prvi commit
+###Index i commit
 Mesto gde se pripremaju izmene za commit
 ![](images/index.png)
 
@@ -119,32 +119,8 @@ $ git status
 # prvi commit
 $ git commit -m 'Prva izmena'
 $ git status
-# prikazivanje istorije projekta
-$ git log
-# formatiran prikaz
-$ git log --graph --all --oneline --decorate
-```
-
-#HSLIDE
-### HEAD
-Referenca na 'trenutni' SHA1 commit-a na kome se nalazimo
-
-#HSLIDE
-### Detached HEAD
-Bilo koji checkout na commit koji nije ime grane dovodi do ovog stanja, cak i na SHA1 koji je poslednji na grani (ovo se moze predstaviti kao anonimna grana). Samo checkout na ime lokalne grane izbegava ovaj slicaj.
-
-```
-# fix for deached HEAD
-git checkout develop
-```
-
-#HSLIDE
-### Kretanje kroz commitove
-
-```
-git log
-git checkout <commit sha> or <tag> or <branch>
-git checkout HEAD~5
+# kaci promene na predhodni commit
+$ git commit -amend
 ```
 
 #HSLIDE
@@ -164,8 +140,6 @@ $ git stash list
 ### Uklanjanje promena iz indexa
 
 ```
-# obrisi datoteku
-$ git rm <name> 
 # Ukloni iz repozitorijuma ali ostavi fizicki
 $ git rm --cached <name> 
 # Ukloni sve izmene od poslednjeg commit-a
@@ -173,13 +147,114 @@ $ git checkout . or <name>
 ```
 
 #HSLIDE
-### Uklanjanje commit-ova iz lokalnog repozitorijuma
+### Uklanjanje commit-a iz lokalnog repozitorijuma
 
 ```
 # obrisi sve commit-ove i njihove promene
 $ git reset <commit sha> --hard
 # obrisi sve commit-ove ali ostavi njihove izmene u indexu
 $ git reset <commit sha> --soft
+# obrisi sve commit-ove ali ostavlji izmene u radnom direktorijumu
+$ git reset <commit sha> --mixed
+# kreira novi commit sa spuprotnim promenama
+$ git revert
+```
+
+#HSLIDE
+### Istorija projekta
+
+```
+# prikazivanje istorije
+$ git log
+# formatiran prikaz
+$ git log --graph --all --oneline --decorate
+```
+
+![](images/log.png)
+
+#HSLIDE
+### Kretanje kroz commitove
+
+```
+git log
+git checkout <commit sha> or <tag> or <branch>
+git checkout HEAD~5
+```
+
+#HSLIDE
+### HEAD
+Referenca na 'trenutni' SHA1 commit-a na kome se nalazimo
+![](images/head.png)
+
+#HSLIDE
+### Detached HEAD
+Bilo koji checkout na commit koji nije ime grane dovodi do ovog stanja, cak i na SHA1 koji je poslednji na grani (ovo se moze predstaviti kao anonimna grana). Samo checkout na ime lokalne grane izbegava ovaj slicaj.
+
+```
+# fix for deached HEAD
+git checkout develop
+```
+
+#HSLIDE
+### grananje
+
+```
+$git branch
+$git branch <name>
+$git checkout -b <name>
+```
+#HSLIDE
+
+![](images/merge.png)
+
+```
+# develop u sadasnju granu
+$git merge develop (fast forvard)
+```
+
+
+#HSLIDE
+![](images/fast forward.png)
+
+```
+# develop u sadasnju granu
+git merge develop
+```
+
+
+#HSLIDE
+![](images/rebase.png)
+
+```
+# develop u sadasnju granu
+git rebase develop
+```
+
+#HSLIDE
+### Cherry pick
+
+Preuzima bilo koji commit i primenjuje ga gde god da se trenutno nalazimo, kao rezulat nasanjenovi commit sa istim izmenama i drugim SHA id-em.
+
+```
+# preuzmi ceo commit
+$ git cherry-pich <sha>
+# preuzmi deo commit-a
+$ git cherry-pick -n (--no-commit) <sha>
+```
+
+#HSLIDE
+### Conflict
+Nastaju kada git neume sam da razresi dve promene koje su se desila na istoj liniji koda. Tada se od korisnika zahteva da otvori datoteku i rucno da obrise visak izmena i izvrsi commit
+
+```
+<<<<<<< HEAD
+open an issue
+=======
+ask your question in IRC.
+>>>>>>> branch-a
+
+git add <conflict file>
+git commit
 ```
 
 #HSLIDE
@@ -195,45 +270,4 @@ $ git reset <sha> --hard
 # nasilno prepisuje istoriju udaljenog repozitorijuma
 $ git push mathnet -f
 ```
-
-#HSLIDE
-### Cherry pick
-
-Preuzima bilo koji commit i primenjuje ga gde god da se trenutno nalazimo, kao rezulat nasanjenovi commit sa istim izmenama i drugim SHA id-em.
-
-```
-# ceo commit
-cherry-pich <sha>
-# deo commit-a
-cherry-pick -n (--no-commit) <sha>
-```
-
-#HSLIDE
-### Conflict
-Nastaju kada git neume sam da razresi dve promene koje su se desila na istoj liniji koda. Tada se od korisnika zahteva da otvori datoteku i rucno da obrise visak izmena i izvrsi commit
-
-```
-<<<<<<< HEAD
-open an issue
-=======
-ask your question in IRC.
->>>>>>> branch-a
-
-git add
-git commit
-```
-
-#HSLIDE
-### grananje
-
-```
-git branch
-git branch <name>
-git checkout -b <name>
-develop u sadasnju granu
-git merge develop (fast forvard)
-
-git rebase develop
-```
-
 
