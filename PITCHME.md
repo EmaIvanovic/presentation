@@ -147,7 +147,7 @@ $ git checkout . or <name>
 ```
 
 #HSLIDE
-### Uklanjanje commit-a iz lokalnog repozitorijuma
+### Uklanjanje commit-a
 
 ```
 # obrisi sve commit-ove i njihove promene
@@ -166,7 +166,7 @@ $ git revert
 ```
 # prikazivanje istorije
 $ git log
-# formatiran prikaz
+# formatiran instorija
 $ git log --graph --all --oneline --decorate
 ```
 
@@ -184,14 +184,15 @@ git checkout HEAD~5
 #HSLIDE
 ### HEAD
 Referenca na 'trenutni' SHA1 commit-a na kome se nalazimo
+
 ![](images/head.png)
 
 #HSLIDE
 ### Detached HEAD
-Bilo koji checkout na commit koji nije ime grane dovodi do ovog stanja, cak i na SHA1 koji je poslednji na grani (ovo se moze predstaviti kao anonimna grana). Samo checkout na ime lokalne grane izbegava ovaj slicaj.
+Bilo koji checkout na commit koji nije ime grane dovodi do ovog stanja, cak i na SHA1 koji je poslednji na grani (ovo stanje se moze predstaviti kao anonimna grana). Samo checkout na ime lokalne grane izbegava ovo stanje.
 
 ```
-# fix for deached HEAD
+# resenje za deached HEAD
 git checkout develop
 ```
 
@@ -208,7 +209,7 @@ $git checkout -b <name>
 ![](images/merge.png)
 
 ```
-# develop u sadasnju granu
+# experiment grana u sadasnju granu
 $git merge develop (fast forvard)
 ```
 
@@ -217,8 +218,8 @@ $git merge develop (fast forvard)
 ![](images/fast forward.png)
 
 ```
-# develop u sadasnju granu
-git merge develop
+# varijanta u sadasnju granu
+git merge varijanta
 ```
 
 
@@ -226,8 +227,8 @@ git merge develop
 ![](images/rebase.png)
 
 ```
-# develop u sadasnju granu
-git rebase develop
+# varijanta u na vrh sadasnje granu
+git rebase varijanta
 ```
 
 #HSLIDE
@@ -258,16 +259,97 @@ git commit
 ```
 
 #HSLIDE
+### Udaljeni repozitorijum
+Github | Bitbucket | Gilab <br>
+(centralizovano distribuirani sistem)
+
+![](images/remote repo.png)
+
+#HSLIDE
+### Pracenje repozitorijuma 
+
+```
+# Dodavanje novog udaljenog repozitorujma
+git remote add origin https://github.com/user/repo.git
+
+# Validacija udaljenog repozitorijuma
+git remote -v
+origin  https://github.com/user/repo.git (fetch)
+origin  https://github.com/user/repo.git (push)
+```
+
+#HSLIDE
+### Origin grane
+![](images/remote.png)
+
+#HSLIDE
+### Preuzimanje izmena
+#### fetch <br>
+
+![](images/fetch.png)
+
+```
+$ git fetch <remote repo> <branch>
+```
+
+
+#HSLIDE
+#### pull <br>
+
+![](images/pull.png)
+
+```
+$ git fetch
+$ git merge origin/master
+# isto sto i
+$ git pull origin master
+```
+
+#HSLIDE
+#### pull rebase<br>
+
+![](images/pull.png)
+
+```
+$git pull rebase
+```
+
+#HSLIDE
+### Slanje izmena
+#### push <br>
+
+![](images/push1.png)
+
+```
+$ git push <remote repo> <branch>
+$ git push origin master
+```
+
+#HSLIDE
+Situacija u kojoj smo u nasem master commit-ovali, ali jos neko je poslao pre nas izmene na udaljeni master
+
+![](images/push2.png)
+
+```
+$ git push
+error: failed to push some refs to remote
+
+$ git pull
+$ git push
+```
+
+#HSLIDE
 ### Uklanjanje commit-ova iz udaljenog repozitorijuma
 Vrsi se tako sto se napravi novi commit sa izmenama koje negiraju predhodno poslate
 
 ```
 # kreira novi commit
-$ git revert 
+$ git revert
+# salje izmene na udaljeni repozitorijum 
 $ git push
 # brise lokalni commit
 $ git reset <sha> --hard
 # nasilno prepisuje istoriju udaljenog repozitorijuma
-$ git push mathnet -f
+$ git push <branch> -f
 ```
 
