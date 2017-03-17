@@ -3,9 +3,9 @@
 
 #HSLIDE
 
-### Sta su sistemi za verzionisanje programa / koda?
+### Šta su sistemi za verzionisanje programa / koda?
 
-Alati koji nam omogucavaju vodnjenje evidnecije izmenama nad projektom bilo da radimo sami ili u grupi. 
+Alati koji nam omogućavaju vodjnjenje evidnecije izmenama nad projektom bilo da radimo sami ili u grupi. 
 
 #HSLIDE
 
@@ -19,46 +19,46 @@ Alati koji nam omogucavaju vodnjenje evidnecije izmenama nad projektom bilo da r
 ![](images/uvod.png)
 
 #HSLIDE
-###Zasto git?
-Jer se u odnosu na druge istakao svojom brzinom, integritetom nad podatcima, distribuiranoscu i mogucnoscu za ne linearnim tokom rada.
+###Zašto git?
+Jer se u odnosu na druge istakao svojom brzinom, integritetom nad podatcima, distribuiranošću i mogucnošću za nelinearnim tokom rada.
 
 #HSLIDE
 ###Git VS SVN
 ![](images/gvs.png)
 
 #HSLIDE
-###Kako je zamisljen?
-Kao mreza zasebnih repozitorijuma koji se mogu medjusobno sinhronizovati (distribuiranost), iz toga proistice da svaka izmena koja je napravljena utice samo na lokalni repozitorijum sve dok se ne izvrsi sinhronizacija sa drugim repozitorijumom.
+###Kako je zamišljen?
+Kao mreža zasebnih repozitorijuma koji se mogu medjusobno sinhronizovati (distribuiranost), iz toga proističe da svaka izmena koja je napravljena utiče samo na lokalni repozitorijum sve dok se ne izvrši sinhronizacija sa drugim repozitorijumom.
 
 #HSLIDE
-###Kako se najcesce koristi?
-Kao kombinaciju centralizovane i distribuirane mreze gde se sve izmene sinhronizuju preko jednog udaljenog repozitoriujma (Github, Bitbcuket, Gitlab...)git a
+###Kako se najčešce koristi?
+Kao kombinacija centralizovane i distribuirane mreže gde se sve izmene sinhronizuju preko jednog udaljenog repozitoriujma (Github, Bitbcuket, Gitlab...)git a
 
 #HSLIDE
 ### Repozitoriujum
-Mesto na kome se cuvaju svi commit-ovi sa promenama koje smo do napravil. Moze biti lokalni ili udaljeni. Nalazi se u nasem projektu u `.git` dorektorijumu.
+Mesto na kome se cuvaju svi commit-ovi sa promenama koje smo do sada napravili. Moze biti lokalni ili udaljeni. Nalazi se u našem projektu u `.git` dorektorijumu.
 
 #HSLIDE
 ### Commit
 
-Commit predstavlja stanje projekta u odredjenom trenutku kada samo ga nacinilo. Vise povezanih commit-ova formira graf koji predstavlja istoriju naseg projekta.
+Commit predstavlja stanje projekta u odredjenom trenutku. Više povezanih commit-ova formira graf koji predstavlja istoriju našeg projekta.
 
 #HSLIDE
 ### Dobra praksa  
 
-Commit-ove treba cesto praviti, gde svaki od njih predstavlja jednu ideju ili promenu koja je jednostavna za citanje i laka za naknadno uklanjanje
+Commit-ove treba često praviti, gde svaki od njih predstavlja jedinstvenu celinu koja je jednostavna za razumevanje i laka za uklanjanje.
 
 #HSLIDE
-### Linerano istorija koda
+### Linerana istorija koda
 
-Idealna situacija u kojoj su se izmene desavale sekvencialno jedna za drugom. Projekat je zapocet sa stanjem a, pa se napravljene izmjene b, c, . . . sve do prve verzije.U ovo me nam dosta pomaze rebase koji cemo kasnije spomenuti.
+Idealna situacija u kojoj su se izmene dešavale sekvencialno jedna za drugom. Projekat je zapocet sa stanjem , `a` pa su napravljene izmene `b`, `c`, . . . sve do prve verzije. U ovome nam dosta pomaze komanda `rebase` koju ćemo kasnije opisati.
 
 ![](images/linearno.png)
 
 #HSLIDE
 ### Grafovi i grananje
 
-Grananje predstavlja nelinearno verzionisanje i ono se moze predstaviti pitem grafova
+Grananje predstavlja nelinearno verzionisanje i ono se predstavlja putem grafova.
 
 ![](images/grananje.png)
 
@@ -71,10 +71,10 @@ Grananje predstavlja nelinearno verzionisanje i ono se moze predstaviti pitem gr
 ###Rukovanje
 
 ```
-# command
+# zadavnje komandi
 git <command> <option 1> <option 2> …
 
-# help
+# pomoć
 git help <command> …
 ```
 
@@ -86,7 +86,7 @@ git help <command> …
 $ cd <repo name>
 $ git init
 
-# kloniranje postojeceg udaljenog repozitorijuma
+# kloniranje postojećeg udaljenog repozitorijuma
 $ git clone <https link> or <ssh link>
 $ cd <repo name>
 ```
@@ -106,7 +106,7 @@ git config user.email
 #HSLIDE
 ###.gitignore
 
-Datoteka u kojoj su navedeni svi direktorijumi i datotoeke koje zelimo da izuzmeo iz verzionisanja (.idea, /log, /*.yml...)
+Datoteka u kojoj su navedeni svi direktorijumi i datotoeke koje želimo da izuzmeo iz verzionisanja (.idea, /log, /*.yml...)
 
 #HSLIDE
 ###Index i commit
@@ -115,37 +115,37 @@ Mesto gde se pripremaju izmene za commit
 
 #HSLIDE
 ```
-# dodavanje datoteke u pracanje
+# dodavanje datoteke u index
 $ git add <name>
 # prikazivanje trenutnog statusa
 $ git status
 # prvi commit
 $ git commit -m 'Prva izmena'
 $ git status
-# kaci promene na predhodni commit
+# kači promene na predhodni commit
 $ git commit -amend
 ```
 
 #HSLIDE
 ### Stash
-Mesto za privremeno cuvanje izmena
+Mesto za privremeno čuvanje izmena
 
 ```
-# stash sa dafault imenom
+# stash sa podrazumevanim imenom
 $ git stash
-# stash sa specificiranim imenom
+# stash sa navedenim imenom
 $ git stash <-u> <save [name]>
-# izlistavanje svih stash-eva
+# listavanje svih stash-eva
 $ git stash list
 ```
 
 #HSLIDE
-### Uklanjanje promena iz indexa
+### Uklanjanje promena iz index-a
 
 ```
-# Ukloni iz repozitorijuma ali ostavi fizicki
+# uklonja iz repozitorijuma ali ostavlja fizicki
 $ git rm --cached <name> 
-# Ukloni sve izmene od poslednjeg commit-a
+# ukloninja sve izmene do poslednjeg commit-a
 $ git checkout . or <name>
 ```
 
@@ -153,13 +153,13 @@ $ git checkout . or <name>
 ### Uklanjanje commit-a
 
 ```
-# obrisi sve commit-ove i njihove promene
+# briše sve commit-ove i njihove promene
 $ git reset <commit sha> --hard
-# obrisi sve commit-ove ali ostavi njihove izmene u indexu
+# briše sve commit-ove ali ostavlja njihove izmene u index-u
 $ git reset <commit sha> --soft
-# obrisi sve commit-ove ali ostavlji izmene u radnom direktorijumu
+# briše sve commit-ove ali ostavlja izmene u radnom direktorijumu
 $ git reset <commit sha> --mixed
-# kreira novi commit sa spuprotnim promenama
+# kreira novi commit sa suprotnim promenama
 $ git revert
 ```
 
@@ -169,7 +169,7 @@ $ git revert
 ```
 # prikazivanje istorije
 $ git log
-# formatiran instorija
+# formatirana istorija
 $ git log --graph --all --oneline --decorate
 ```
 
@@ -179,9 +179,12 @@ $ git log --graph --all --oneline --decorate
 ### Kretanje kroz commitove
 
 ```
-git log
-git checkout <commit sha> or <tag> or <branch>
-git checkout HEAD~5
+# lista istoriju
+$ git log
+# pozicionira na navedeni commit, tag ili granu
+$ git checkout <commit sha> or <tag> or <branch>
+# pozicionira na 5 commit od trenutnog
+$ git checkout HEAD~5
 ```
 
 #HSLIDE
@@ -192,37 +195,42 @@ Referenca na 'trenutni' SHA1 commit-a na kome se nalazimo
 
 #HSLIDE
 ### Detached HEAD
-Bilo koji checkout na commit koji nije ime grane dovodi do ovog stanja, cak i na SHA1 koji je poslednji na grani (ovo stanje se moze predstaviti kao anonimna grana). Samo checkout na ime lokalne grane izbegava ovo stanje.
+Bilo koji checkout na commit koji nije ime grane dovodi do ovog stanja, čak i na SHA1 koji je poslednji na grani (ovo stanje se moze predstaviti kao anonimna grana). Samo checkout na ime lokalne grane izbegava ovo stanje.
 
 ```
-# resenje za deached HEAD
-git checkout develop
+# rešenje za deached HEAD
+$ git checkout develop
 ```
 
 #HSLIDE
 ### grananje
 
 ```
-$git branch
-$git branch <name>
-$git checkout -b <name>
+# lista lokalne grane
+$ git branch
+# lista lokalne grane i udaljene grane
+$ git branch -a
+# kreira novu lokalnu granu
+$ git branch <name>
+# kreira novu lokalnu granu i pozicionira se na nju
+$ git checkout -b <name>
 ```
+
 #HSLIDE
 
 ![](images/merge.png)
 
 ```
-# experiment grana u sadasnju granu
-$git merge develop (fast forvard)
+# spaja “eksperimentalna-grana” u sadašnju granu
+$ git merge experimentalna-grana 
 ```
-
 
 #HSLIDE
 ![](images/fast forward.png)
 
 ```
-# varijanta u sadasnju granu
-git merge varijanta
+# spaja “varijanta” u sadašnju granu (fast forvard)
+$ git merge varijanta  
 ```
 
 
@@ -230,25 +238,25 @@ git merge varijanta
 ![](images/rebase.png)
 
 ```
-# varijanta u na vrh sadasnje granu
-git rebase varijanta
+# postavlja početak “varijanta” na vrh sadašnje grane
+$ git rebase varijanta
 ```
 
 #HSLIDE
 ### Cherry pick
 
-Preuzima bilo koji commit i primenjuje ga gde god da se trenutno nalazimo, kao rezulat nasanjenovi commit sa istim izmenama i drugim SHA id-em.
+Preuzima bilo koji commit i primenjuje ga gde god da se trenutno nalazimo, kao rezulat nastaje novi commit sa istim izmenama i drugim SHA id-em.
 
 ```
-# preuzmi ceo commit
+# preuzma ceo commit
 $ git cherry-pich <sha>
-# preuzmi deo commit-a
+# preuzma deo commit-a
 $ git cherry-pick -n (--no-commit) <sha>
 ```
 
 #HSLIDE
 ### Conflict
-Nastaju kada git neume sam da razresi dve promene koje su se desila na istoj liniji koda. Tada se od korisnika zahteva da otvori datoteku i rucno da obrise visak izmena i izvrsi commit
+Nastaju kada git ne ume sam da razreši dve promene koje su se desile na istom dokumentu. Tada se od korisnika zahteva da ručno obriše višak izmena i izvrši commit
 
 ```
 <<<<<<< HEAD
@@ -257,8 +265,8 @@ open an issue
 ask your question in IRC.
 >>>>>>> branch-a
 
-git add <conflict file>
-git commit
+$ git add <conflict file>
+$ git commit
 ```
 
 #HSLIDE
@@ -271,10 +279,10 @@ git commit
 
 ```
 # Dodavanje novog udaljenog repozitorujma
-git remote add origin https://github.com/user/repo.git
+$ git remote add origin https://github.com/user/repo.git
 
 # Validacija udaljenog repozitorijuma
-git remote -v
+$ git remote -v
 origin  https://github.com/user/repo.git (fetch)
 origin  https://github.com/user/repo.git (push)
 ```
@@ -302,7 +310,7 @@ $ git fetch <remote repo> <branch>
 ```
 $ git fetch
 $ git merge origin/master
-# isto sto i
+# isto kao
 $ git pull origin master
 ```
 
@@ -312,7 +320,7 @@ $ git pull origin master
 ![](images/pull.png)
 
 ```
-$git pull rebase
+$ git pull rebase
 ```
 
 #HSLIDE
@@ -326,7 +334,7 @@ $ git push origin master
 ```
 
 #HSLIDE
-Situacija u kojoj smo u nasem master commit-ovali, ali jos neko je poslao pre nas izmene na udaljeni master
+Situacija u kojoj smo na našoj master grani napravili zimene, ali još neko je pre nas napravio izmene na udaljenoj master grani
 
 ![](images/push2.png)
 
@@ -340,14 +348,14 @@ $ git push
 
 #HSLIDE
 ### Uklanjanje commit-ova iz udaljenog repozitorijuma
-Vrsi se tako sto se napravi novi commit sa izmenama koje negiraju predhodno poslate
+Izvodi se tako što se pravi novi commit sa izmenama koje negiraju predhodno poslate
 
 ```
 # kreira novi commit
 $ git revert
-# salje izmene na udaljeni repozitorijum 
+# šalje izmene na udaljeni repozitorijum 
 $ git push
-# brise lokalni commit
+# briše lokalni commit
 $ git reset <sha> --hard
 # nasilno prepisuje istoriju udaljenog repozitorijuma
 $ git push <branch> -f
