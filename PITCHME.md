@@ -19,9 +19,12 @@ Alati koji nam omogucavaju vodnjenje evidnecije izmenama nad projektom bilo da r
 ![](images/uvod.png)
 
 #HSLIDE
-
 ###Zasto git?
 Jer se u odnosu na druge istakao svojom brzinom, integritetom nad podatcima, distribuiranoscu i mogucnoscu za ne linearnim tokom rada.
+
+#HSLIDE
+###Git VS SVN
+![](images/gvs.png)
 
 #HSLIDE
 ###Kako je zamisljen?
@@ -314,7 +317,6 @@ $git pull rebase
 
 #HSLIDE
 ### Slanje izmena
-#### push <br>
 
 ![](images/push1.png)
 
