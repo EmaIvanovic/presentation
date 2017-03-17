@@ -176,20 +176,53 @@ $ git checkout . or <name>
 
 ```
 # obrisi sve commit-ove i njihove promene
-$ git reset --hard <commit sha> 
+$ git reset <commit sha> --hard
 # obrisi sve commit-ove ali ostavi njihove izmene u indexu
-$ git reset --soft <commit sha>
+$ git reset <commit sha> --soft
 ```
 
 #HSLIDE
 ### Uklanjanje commit-ova iz udaljenog repozitorijuma
+Vrsi se tako sto se napravi novi commit sa izmenama koje negiraju predhodno poslate
 
 ```
-# obrisi sve commit-ove i njihove promene
-$ git reset --hard <commit sha> 
-# obrisi sve commit-ove ali ostavi njihove izmene u indexu
-$ git reset --soft <commit sha>
+# kreira novi commit
+$ git revert 
+$ git push
+# brise lokalni commit
+$ git reset <sha> --hard
+# nasilno prepisuje istoriju udaljenog repozitorijuma
+$ git push mathnet -f
 ```
 
+#HSLIDE
+### Cherry pick
+
+Preuzima bilo koji commit i primenjuje ga gde god da se trenutno nalazimo, kao rezulat nasanjenovi commit sa istim izmenama i drugim SHA id-em.
+
+```
+# ceo commit
+cherry-pich <sha>
+# deo commit-a
+cherry-pick -n (--no-commit) <sha>
+```
+
+#HSLIDE
+### Conflict
+Nastaju kada git neume sam da razresi dve promene koje su se desila na istoj liniji koda. Tada se od korisnika zahteva da otvori datoteku i rucno da obrise visak izmena i izvrsi commit
+
+```
+<<<<<<< HEAD
+open an issue
+=======
+ask your question in IRC.
+>>>>>>> branch-a
+
+git add
+git commit
+```
+
+#HSLIDE
+### Conflict
 
 
