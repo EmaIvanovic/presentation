@@ -139,11 +139,12 @@ git checkout develop
 ```
 
 #HSLIDE
-### Kretanje kroz istoriju
+### Kretanje kroz commitove
 
 ```
 git log
-git checkout <commit sha> or <tag>
+git checkout <commit sha> or <tag> or <branch>
+git checkout HEAD~5
 ```
 
 #HSLIDE
