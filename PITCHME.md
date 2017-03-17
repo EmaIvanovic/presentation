@@ -32,7 +32,7 @@ Kao mreza zasebnih repozitorijuma koji se mogu medjusobno sinhronizovati (distri
 
 #HSLIDE
 ###Kako se najcesce koristi?
-Kao kombinaciju centralizovane i distribuirane mreze gde se sve izmene sinhronizuju preko jednog udaljenog repozitoriujma (Github, Bitbcuket, Gitlab...)
+Kao kombinaciju centralizovane i distribuirane mreze gde se sve izmene sinhronizuju preko jednog udaljenog repozitoriujma (Github, Bitbcuket, Gitlab...)git a
 
 #HSLIDE
 ### Repozitoriujum
