@@ -260,13 +260,11 @@ git commit
 
 #HSLIDE
 ### Udaljeni repozitorijum
-Github | Bitbucket | Gilab <br>
-(centralizovano distribuirani sistem)
 
 ![](images/remote repo.png)
 
 #HSLIDE
-### Pracenje repozitorijuma 
+### Dodavanje udaljenog repozitorijuma 
 
 ```
 # Dodavanje novog udaljenog repozitorujma
@@ -279,7 +277,7 @@ origin  https://github.com/user/repo.git (push)
 ```
 
 #HSLIDE
-### Origin grane
+### Ispod haube
 ![](images/remote.png)
 
 #HSLIDE
