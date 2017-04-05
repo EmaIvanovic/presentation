@@ -44,6 +44,11 @@ Mesto na kome se cuvaju svi commit-ovi sa promenama koje smo do sada napravili. 
 Commit predstavlja stanje projekta u odredjenom trenutku. Više povezanih commit-ova formira graf koji predstavlja istoriju našeg projekta.
 
 #HSLIDE
+###Index i commit
+Mesto gde se pripremaju izmene za commit
+![](images/index.png)
+
+#HSLIDE
 ### Dobra praksa  
 
 Commit-ove treba često praviti, gde svaki od njih predstavlja jedinstvenu celinu koja je jednostavna za razumevanje i laka za uklanjanje.
@@ -63,8 +68,36 @@ Grananje predstavlja nelinearno verzionisanje i ono se predstavlja putem grafova
 ![](images/grananje.png)
 
 #HSLIDE
+### Udaljeni repozitorijum
+
+![](images/remote repo.png)
+
+
+#HSLIDE
+###.gitignore
+
+Datoteka u kojoj su navedeni svi direktorijumi i datotoeke koje želimo da izuzmeo iz verzionisanja (.idea, /log, /*.yml...)
+
+#HSLIDE
 ### Prakticni rad
 ![](images/git.jpg)
+
+#HSLIDE
+### END
+
+#HSLIDE
+### Instalacija
+Win
+`https://git-scm.com/download/win`
+
+Linux (Ubuntu)
+`sudo apt-get install git`
+
+OSX
+`brew install git`
+
+#HSLIDE
+### 
 
 #HSLIDE
 
@@ -103,15 +136,8 @@ git config user.email
 ...
 ```
 
-#HSLIDE
-###.gitignore
 
-Datoteka u kojoj su navedeni svi direktorijumi i datotoeke koje želimo da izuzmeo iz verzionisanja (.idea, /log, /*.yml...)
 
-#HSLIDE
-###Index i commit
-Mesto gde se pripremaju izmene za commit
-![](images/index.png)
 
 #HSLIDE
 ```
@@ -269,10 +295,6 @@ $ git add <conflict file>
 $ git commit
 ```
 
-#HSLIDE
-### Udaljeni repozitorijum
-
-![](images/remote repo.png)
 
 #HSLIDE
 ### Dodavanje udaljenog repozitorijuma 
