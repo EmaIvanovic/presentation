@@ -27,7 +27,7 @@ Version control systems are a category of software tools that help a software te
 
 #HSLIDE
 ###Initial idea?
-As a network of distributed repositories which can synhronize with each other (origin of distribution). Thats the reason why every change is local until you push it to remote repo.
+Network of distributed repositories which can synhronize with each other (origin of distribution). Thats the reason why every change is local until you push it to remote repo.
 
 #HSLIDE
 ###Git VS SVN
@@ -35,7 +35,7 @@ As a network of distributed repositories which can synhronize with each other (o
 
 #HSLIDE
 ###How is mostly used?
-As a combination of distributed and centralized network where every developer has his local repo but he when he want to synhronize his work with team he does that over central repo (Github, Bitbcuket, Gitlab...)
+Combination of distributed and centralized network where every developer has his local repo but he when he want to synhronize his work with team he does that over central repo (Github, Bitbcuket, Gitlab...)
 
 #HSLIDE
 ###Repository
