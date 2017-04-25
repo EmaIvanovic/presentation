@@ -85,12 +85,18 @@ $ git commit -m 'Prva izmena'
 $ git status
 ```
 
-###Pregled istorije
+###Pregled istorije i revizija
 
 ```
 # prikazuje dosadanje commitov-e
 $ git log
+# vracanje kroz istoriju
+$ got checkout <SHA>
+# vracanje na poslednji komit
+$ git checkout master
 ```
+
+
 
 ###Resetovanje promena
 
