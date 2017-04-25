@@ -26,7 +26,7 @@ Version control systems are a category of software tools that help a software te
 - nelinear history
 
 #HSLIDE
-###Kako je zamišljen?
+###Initial idea?
 As a network of distributed repositories which can synhronize with each other (origin of distribution). Thats the reason why every change is local until you push it to remote repo.
 
 #HSLIDE
@@ -34,11 +34,11 @@ As a network of distributed repositories which can synhronize with each other (o
 ![](images/gvs.png)
 
 #HSLIDE
-###Kako se najčešce koristi?
+###How is mostly used?
 As a combination of distributed and centralized network where every developer has his local repo but he when he want to synhronize his work with team he does that over central repo (Github, Bitbcuket, Gitlab...)
 
 #HSLIDE
-### Repozitoriujum
+###Repository
 Place where all commits and changes are saved. It can be _local_ or _remote_. Local repo is located in our project in `.git` directory. 
 
 #HSLIDE
@@ -52,7 +52,7 @@ Place where you prepare your changes for commit
 ![](images/index.png)
 
 #HSLIDE
-###Dobra praksa  
+###Best practice
 
 - Commit early, commit often. 
 - One commit represents: 
@@ -65,7 +65,7 @@ Place where you prepare your changes for commit
 HEAD represent pointer to one commit, usualy its latest commit on branch, but if you itereate trough history it cam be any previous commit.
 
 #HSLIDE
-### Linerana istorija koda
+###Linear history
 
 Ideal situtation where every changes are created one by one in row. Project started with change, `a` then changes `b`, `c`, . . . ocured and finaly version 1.0 is created. `Rebase` command is very helpful for this kind of job.
 
