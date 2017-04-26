@@ -91,3 +91,5 @@ Specific file where write all files and folders which you don't want to be track
 #HSLIDE
 ### Workshop
 ![](images/git.jpg)
+
+`https://tinyurl.com/git-enter-conf`
