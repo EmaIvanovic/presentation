@@ -23,7 +23,7 @@ Version control systems are a category of software tools that help a software te
 - faster
 - data integrity
 - distributed 
-- nelinear history
+- nonlinear history
 
 #HSLIDE
 ###Initial idea?
