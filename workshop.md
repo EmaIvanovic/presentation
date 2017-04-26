@@ -18,13 +18,13 @@ __OSX__
 
 #UI Client
 
-In this tutorial we will use Source Tree Git UI client, its available for mac and win
+In this tutorial we will use Source Tree Git UI client, its available for Mac and Win.
 
 ```
 https://www.sourcetreeapp.com/
 ```
 
-Beside Source Tree for win you can use Tortoise
+Beside Source Tree for win you can use Tortoise.
 
 ```
 https://tortoisegit.org/
@@ -32,7 +32,7 @@ https://tortoisegit.org/
 
 #Project setup
 
-Before we start using git we should create our working (project) direcory. Create `enter_git_workshop` directory
+Before we start using git we should create our working (project) direcory. Create `enter_git_workshop` directory.
 
 #Git initialization
 
@@ -48,17 +48,17 @@ _Add path to your `enter_git_workshop` directory_
 
 ![](git_workshop/3.png)
 
-_Double click on `enter_git_worshop` repositorum_
+_Double click on `enter_git_worshop` repositorum._
 
 ![](git_workshop/4.png)
 
 #First commit
 
-_`File Status` tab is place where we will track uncommited and untracked project changes, since we just initialized our repo there is no changes_
+_`File Status` tab is place where we will track uncommited and untracked project changes, since we just initialized our repo there is no changes._
 
 ![](git_workshop/5.png)
 
-_Go to `enter_git_worshop` directory and create two files `address_book.txt` and `note.txt`. After this we can see them as untracted files_
+_Go to `enter_git_worshop` directory and create two files `address_book.txt` and `note.txt`. After this we can see them as untracted files._
 
 ![](git_workshop/6.png)
 
@@ -74,7 +74,7 @@ _If we take a look again on our `File Status` tab again we don't have any change
 
 ![](git_workshop/9.png)
 
-_But if we look in `Branches` tab we can see our first commit on `master` branch_
+_But if we look in `Branches` tab we can see our first commit on `master` branch._
 
 ![](git_workshop/10.png)
 
@@ -86,7 +86,7 @@ _Add line `Welcome to Enter conf` in note.txt. Go to `File Status` tab and stage
 
 ![](git_workshop/11.png)
 
-_Add message and commit change_
+_Add message and commit change._
 
 ![](git_workshop/12.png)
 
@@ -102,7 +102,7 @@ _But for commit you still need to go to `File Status` tab and write commit messa
 
 ![](git_workshop/15.png)
 
-_If we go to `BRANCHES ` tab we can see our changes_
+_If we go to `BRANCHES ` tab we can see our changes._
 
 ![](git_workshop/21d.png)
 
@@ -158,7 +158,7 @@ __Mixed__
  
 ![](git_workshop/24a.png)
 
-_Commit is gone but changes are now unstaged after reset_
+_Commit is gone but changes are now unstaged after reset._
  
 ![](git_workshop/24b.png)
 
@@ -180,7 +180,7 @@ __Hard__
  
 ![](git_workshop/22.png)
 
-_There are no changes in index instead they are eraised from disck same as commit._
+_There are no changes in index instead they are erased same as commit._
 
 ![](git_workshop/22a.png)
 
@@ -248,11 +248,11 @@ _Now we have all changes in master._
 
 _After you merge changes from feature branches its good practice to delete them._
 
-_Delete `feature/logbook` banch_
+_Delete `feature/logbook` banch._
 
 ![](git_workshop/25j.png)
 
-_Confirm_
+_Confirm._
 
 ![](git_workshop/25j1.png)
 
@@ -282,7 +282,7 @@ _Your stashed changes._
 
 ![](git_workshop/26e.png)
 
-_Apply stash_
+_Apply stash._
 
 ![](git_workshop/26f.png)
 
@@ -296,7 +296,7 @@ _And again we have our changes._
 
 ![](git_workshop/26j.png)
 
-_Discart changes_
+_Discart changes._
 
 #Conflicts
 
@@ -404,7 +404,7 @@ _Go to SourceTree and select `REPOSITORY` tab._
 
 ![](git_workshop/30f.png)
 
-_Add repo._
+_Add repository._
 
 ![](git_workshop/30g.png)
 
@@ -432,7 +432,7 @@ _We can also pull changes from remote repository with pull command._
 
 ![](git_workshop/30r.png)
 
-_Result is same because we dont have any remote changes_
+_Result is same because we dont have any remote changes._
 
 ![](git_workshop/30t.png)
 
@@ -495,7 +495,7 @@ ignored.txt
 
 ![](git_workshop/31c.png)
 
-_Result_
+_Result._
 
 ![](git_workshop/31d.png)
 
